@@ -1,4 +1,5 @@
-
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 const categories = [
   {
     id: 1,
@@ -14,6 +15,7 @@ const categories = [
   }
 ];
 
+
 const Page = () => {
  
   return (
@@ -23,14 +25,17 @@ const Page = () => {
       </h1>
       
       <div className="flex animate-intro items-center font-light opacity-0 [animation-delay:0.25s]">
-        <span className="text-neutral-500 text-sm">Design Engineer</span>
+        <span className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-neutral-500 to-neutral-700">Design Engineer</span>
       </div>
       
-      <p className="mt-4 font-light max-w-[60ch] animate-intro opacity-0 [animation-delay:0.4s]">
+      <p className="mt-4 font-applefontlight max-w-[60ch] animate-intro opacity-0 [animation-delay:0.3s]">
         I am a UI Developer by Profession. I do Designing and Development and some artwork as well.
         I believe every pixel makes a Difference
       </p>
-      
+      <div className="mt-4 animate-intro opacity-0 [animation-delay:0.4s]">
+        <p>Experience</p>
+        <Experience/>
+      </div>
       <div className="mt-4 animate-intro opacity-0 [animation-delay:0.5s]">
         <p className="font-semibold mb-2">
           Projects
@@ -46,6 +51,9 @@ const Page = () => {
             </button>
           ))}
         </div>
+      </div>
+      <div>
+        <Projects/>
       </div>
     </div>
   );

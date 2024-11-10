@@ -15,6 +15,11 @@ export default {
       animation:{
         "intro": "intro 0.3s ease-in-out forwards",
       },
+      fontFamily:{
+        applefontlight:"var(--font-apple-light)",
+        applefontregular:"var(--font-apple-regular)",
+        applefontsemibold:"var(--font-apple-semibold)",
+      },
       keyframes:{
         intro: {
           "0%": {
