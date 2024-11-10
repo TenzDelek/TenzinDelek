@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import React from 'react'
+import { GoArrowUpRight } from "react-icons/go";
 
 const ProjectDesign=[
     {
@@ -60,15 +62,18 @@ const ProjectDev = [
 
 const Projects = () => {
   return (
-    <div className=' space-y-2 mt-2'>
+    <div className=' space-y-3 mt-2'>
         {
             ProjectDesign.map((project)=>{
                 return(
                     <div key={project.id} className=' items-center justify-between flex font-applefontlight'>
                        
                        <div>
-                       <p className=' font-applefontregular'>{project.name}</p>
-                       <p className=' text-sm'>{project.description}</p>
+                       <Link href={`/projects/${project.name}` }className=' group flex items-center gap-x-1 cursor-pointer w-fit font-applefontregular'>{project.name} <span className="relative overflow-hidden h-fit w-fit">
+              <GoArrowUpRight className=" text-neutral-400 text-sm group-hover:-translate-y-5 group-hover:translate-x-5 duration-500 transition-transform ease-in-out-circ fill-light-gray stroke-[0.2]" />
+              <GoArrowUpRight className="absolute text-neutral-400 text-sm top-0 group-hover:translate-x-0 duration-500 group-hover:translate-y-0 transition-all ease-in-out-circ translate-y-5 -translate-x-5 fill-light-gray stroke-[0.2]" />
+            </span></Link>
+                       <p className=' text-sm text-neutral-500'>{project.description}</p>
                         </div>
                         <p className=' text-sm'>{project.tag}</p>
                     </div>

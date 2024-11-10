@@ -32,16 +32,17 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <div className=' space-y-2'>
+    <div className=' space-y-2 mt-2'>
       {experiences.map((experience) => (
         <div key={experience.id} className=' flex justify-between items-center gap-x-2'>
             <div className=' flex items-center gap-x-2'>
-            <Image src={experience.imgs} placeholder='blur' width={40} height={40} className=' rounded-full border' alt={experience.company} />
+            <Image src={experience.imgs} placeholder='blur' width={40} height={40} className=' rounded-full border border-neutral-300' alt={experience.company} />
             <div>
             <p className=' text-sm font-applefontregular'>
-              {experience.name} | {experience.company}
+              {experience.name}
             </p>
-            <p className=' text-xs font-applefontlight'>{experience.type}</p>
+            <p className=' text-xs font-applefontlight'>
+            {experience.company} | {experience.type}</p>
             </div>
             </div>
          <div className=' text-xs font-applefontlight'>
