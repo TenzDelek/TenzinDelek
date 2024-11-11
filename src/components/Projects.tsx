@@ -1,36 +1,43 @@
 import Link from 'next/link';
 import React from 'react'
 import { GoArrowUpRight } from "react-icons/go";
-
-const ProjectDesign=[
+import Melongimage from "../../public/Design/melongmonlam.png"
+import Nyamrubimage from "../../public/Design/nyamrubmonlam.png"
+import vitgram from "../../public/Design/hero.png"
+export const ProjectDesign=[
     {
         id:1,
         name:"Monlam Melong",
         description:"Conversational Chatbot in Tibetan",
         tag:"Design",
+        imgss:Melongimage
     },
     {
         id:2,
         name:"Monlam Nyamrub",
         description:"Crowdsourcing initiative to collect Tibetan data for a Machine Learning project",
         tag:"Design",
+        imgss:Nyamrubimage
     },
     {
         id:3,
         name:"Monlam's Logo",
         description:"Logo for Monlam Melong, Monlam Translate and Monlam Extension", 
         tag:"Design", 
+        imgss:Nyamrubimage
+
     },
     {
         id:4,
         name:"VITgram",
         description:"Social Network for VIT Students", 
         tag:"Design", 
+        imgss:vitgram
     },
     
 ]
 
-const ProjectDev = [
+export const ProjectDev = [
     {
       title: "FlashCard Generator",
       desc: "helps generating flashcards based on the given text. It uses the GEMINI API to generate the flashcards.",
@@ -69,7 +76,7 @@ const Projects = () => {
                     <div key={project.id} className=' items-center justify-between flex font-applefontlight'>
                        
                        <div>
-                       <Link href={`/projects/${project.name}` }className=' group flex items-center gap-x-1 cursor-pointer w-fit font-applefontregular'>{project.name} <span className="relative overflow-hidden h-fit w-fit">
+                       <Link href={`/projects/${project.id}` }className=' group flex items-center gap-x-1 cursor-pointer w-fit font-applefontregular'>{project.name} <span className="relative overflow-hidden h-fit w-fit">
               <GoArrowUpRight className=" text-neutral-400 text-sm group-hover:-translate-y-5 group-hover:translate-x-5 duration-500 transition-transform ease-in-out-circ fill-light-gray stroke-[0.2]" />
               <GoArrowUpRight className="absolute text-neutral-400 text-sm top-0 group-hover:translate-x-0 duration-500 group-hover:translate-y-0 transition-all ease-in-out-circ translate-y-5 -translate-x-5 fill-light-gray stroke-[0.2]" />
             </span></Link>
