@@ -1,14 +1,14 @@
 import { ProjectDesign } from "@/components/Projects";
 import Image from "next/image";
 
-const Page = async({ params }: { params: { id: string } }) => {
-  const {id}=await params
+const Page = ({ params }: { params: { id: string } }) => {
+  const {id}= params
   const cleanid = parseInt(decodeURIComponent(id), 10);
   const project = ProjectDesign.find((p) => p.id === cleanid);
 
   if (!project) {
     return <div>Project not found</div>;
-    
+
   }
 
   return (
