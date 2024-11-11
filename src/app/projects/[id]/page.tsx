@@ -1,7 +1,8 @@
 import { ProjectDesign } from "@/components/Projects";
 import Image from "next/image";
 
-const Page = ({ params }: { params: { id: string } }) => {
+const Page = async (props: { params: Promise<{ id: string }> }) => {
+  const params = await props.params;
   const {id}= params
   const cleanid = parseInt(decodeURIComponent(id), 10);
   const project = ProjectDesign.find((p) => p.id === cleanid);
