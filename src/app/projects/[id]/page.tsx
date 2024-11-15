@@ -1,24 +1,43 @@
 import { ProjectDesign } from "@/components/Projects";
 import Image from "next/image";
+import Link from 'next/link';
 
 const Page = async (props: { params: Promise<{ id: string }> }) => {
   const params = await props.params;
-  const {id}= params
+  const {id} = params;
   const cleanid = parseInt(decodeURIComponent(id), 10);
   const project = ProjectDesign.find((p) => p.id === cleanid);
 
   if (!project) {
-    return <div>Project not found
-      <p>
-      
-      </p>
-      </div>;
-
-
+    return (
+      <div>
+        Project not found
+        <p></p>
+        <Link href="/" className="text-blue-500 hover:underline">
+          Back to Home
+        </Link>
+      </div>
+    );
   }
 
   return (
     <div className="max-w-4xl text-center mx-auto px-4">
+   <div className="fixed z-10">
+  <Link 
+    href="/" 
+    className="
+      flex items-center
+      px-4 py-2
+      text-sm text-gray-700 
+      bg-white bg-opacity-20 
+      backdrop-filter backdrop-blur-sm 
+      rounded-full
+      transition-all duration-300
+      hover:bg-opacity-30 "
+  >
+    <span className="mr-2">←</span>Home
+  </Link>
+</div>
       <p className="text-lg">{project.name}</p>
       <p className="font-applefontlight mb-4">
         {project.description}

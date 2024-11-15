@@ -60,7 +60,7 @@ const ProjectDev: DevProject[] = [
   {
     id: 5,
     title: "FlashCard Generator",
-    desc: "helps generating flashcards based on the given text. It uses the GEMINI API to generate the flashcards.",
+    desc: "helps generating flashcards based on the given word",
     link: "https://flashcardai-xi.vercel.app/",
     code: "https://github.com/TenzDelek/flashcardai",
     tag: "Development"
@@ -68,7 +68,7 @@ const ProjectDev: DevProject[] = [
   {
     id: 6,
     title: "CalPage",
-    desc: "is a OCR based sum generator. aiming toward the Tibetan Winter Business Seller to calculate their loan faster",
+    desc: "OCR based sum Generator",
     link: "https://tibetanwinterocr.vercel.app/",
     code: "https://github.com/TenzDelek/Sumit-OCR-Tool-for-Winter-Business",
     tag: "Development"
@@ -77,14 +77,14 @@ const ProjectDev: DevProject[] = [
     id: 7,
     title: "RAGCHATBOT",
     link: "https://github.com/TenzDelek/ratemyprof",
-    desc: "is a RAG based chatbot that takes context from gdrive file, and uses it to answer questions.",
+    desc: "chatbot that takes context from gdrive file",
     code: "https://github.com/TenzDelek/ratemyprof",
     tag: "Development"
   },
   {
     id: 8,
     title: "VITtweet",
-    desc: "allows you to share your thoughts with the community of Vellore Institute of Technology.",
+    desc: "Social hub for College Clubs and Chapter",
     link: "https://capstone-vitgram-2-0.vercel.app/",
     code: "https://github.com/TenzDelek/Capstone-VITGRAM2.0",
     tag: "Development"
