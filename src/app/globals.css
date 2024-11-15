@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
 .bgmain{
   @apply bg-neutral-100
 }
@@ -10,10 +15,4 @@ img{
 }
 ::-webkit-scrollbar{
   display: none;
-}
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  
 }

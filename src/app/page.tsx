@@ -1,23 +1,24 @@
+'use client'
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import { useState } from "react";
+
 const categories = [
-  {
-    id: 1,
-    name: "Design"
-  },
-  {
-    id: 2,
-    name: "Development"
-  },
-  {
-    id: 3,
-    name: "Case Study"
-  }
+  { id: 0, name: "All" },
+  { id: 1, name: "Design" },
+  { id: 2, name: "Development" },
+  { id: 3, name: "Case Study" }
 ];
 
-
 const Page = () => {
- 
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const handleCategoryClick = (categoryName: string) => {
+    setSelectedCategory(prev => 
+      prev === categoryName ? "All" : categoryName
+    );
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4">
       <h1 className="animate-intro opacity-0 font-semibold ">
@@ -45,7 +46,12 @@ const Page = () => {
           {categories.map((category) => (
             <button
               key={category.id}
-              className="rounded border border-neutral-300 px-2 py-1 text-xs text-neutral-500 hover:bg-neutral-200 hover:text-neutral-600 transition"
+              className={`rounded border px-2 py-1 text-xs transition ${
+                selectedCategory === category.name
+                  ? "bg-neutral-200 text-neutral-600 border-neutral-400"
+                  : "border-neutral-300 text-neutral-500 hover:bg-neutral-200 hover:text-neutral-600"
+              }`}
+              onClick={() => handleCategoryClick(category.name)}
             >
               {category.name}
             </button>
@@ -53,7 +59,7 @@ const Page = () => {
         </div>
       </div>
       <div>
-        <Projects/>
+        <Projects category={selectedCategory}/>
       </div>
     </div>
   );

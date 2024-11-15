@@ -8,7 +8,12 @@ const Page = async (props: { params: Promise<{ id: string }> }) => {
   const project = ProjectDesign.find((p) => p.id === cleanid);
 
   if (!project) {
-    return <div>Project not found</div>;
+    return <div>Project not found
+      <p>
+      
+      </p>
+      </div>;
+
 
   }
 
