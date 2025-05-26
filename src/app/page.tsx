@@ -2,7 +2,8 @@
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Link from "next/link";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+
 const links = [
   {
     title: "Github",
@@ -26,7 +27,29 @@ const categories = [
 
 const Page = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const ConsoleGreeting = () => {
+    useEffect(() => {
+      console.clear();
+  
+      const messages = [
+        '%c Hi there! 👋',
+      ];
+  
+      const styles = [
+        'color: #4ade80; font-size: 24px; font-weight: bold; text-shadow: 2px 2px 4px rgba(74, 222, 128, 0.3);',
+      ];
+      messages.forEach((message, index) => {
+          if (message === '') {
+            console.log('');
+          } else {
+            console.log(message, styles[index]);
+          }
+      });
 
+    }, []); 
+    return null; 
+  };
+  
   const handleCategoryClick = (categoryName: string) => {
     setSelectedCategory(prev => 
       prev === categoryName ? "All" : categoryName
@@ -35,6 +58,7 @@ const Page = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4">
+          <ConsoleGreeting />
       <h1 className="animate-intro opacity-0 font-semibold ">
         Tenzin Delek 
       </h1>
